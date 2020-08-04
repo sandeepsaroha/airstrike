@@ -1,11 +1,10 @@
 package com.airstrike.coinsorter.test;
 
-import org.springframework.http.MediaType;
-
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
@@ -37,7 +36,6 @@ public class CoinsServiceControllerTest extends AbstractAirStrikeApiTest {
 		int status = mvcResult.getResponse().getStatus();
 		assertEquals(200, status);
 		String content = mvcResult.getResponse().getContentAsString();
-		System.out.println(content);
 		assertEquals(content, "{\"dollar\":1,\"halfDollar\":0,\"quarter\":1,\"dime\":0,\"nickel\":0,\"penny\":0}");
 	}
 
